@@ -1,4 +1,4 @@
-# Quick Start app
+# Get started
 
 The Quick Start app is a cross-platform tool for guided setup and installation procedures of Nordic Semiconductor devices, available as one of the applications in [nRF Connect for Desktop](https://docs.nordicsemi.com/bundle/nrf-connect-desktop/page/index.html).
 
