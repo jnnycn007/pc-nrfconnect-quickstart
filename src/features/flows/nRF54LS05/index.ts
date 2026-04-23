@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Nordic Semiconductor ASA
+ * Copyright (c) 2026 Nordic Semiconductor ASA
  *
  * SPDX-License-Identifier: LicenseRef-Nordic-4-Clause
  */
@@ -15,9 +15,9 @@ import { type Choice } from '../../device/deviceSlice';
 import Verify from './Verify';
 
 const infoConfig = {
-    title: 'nRF54L Series – nRF54LV10 DK',
+    title: 'nRF54L Series – nRF54LS05 DK',
     markdownContent:
-        '![nRF54LV10 DK](54LV10DK.png)  \n&nbsp;  \nThe nRF54LV10 DK enables development with the nRF54LV10A SoC.  \n&nbsp;  \nnRF54LV10A is part of the nRF54L Series. All wireless System-on-Chip (SoC) options in the series integrate an ultra-low-power multiprotocol 2.4 GHz radio with MCU (Microcontroller Unit) functionality featuring a 128 MHz Arm® Cortex®-M33 processor.  \n&nbsp;  \n![nRF54LV10 DK Technologies](54LV10Tech.png)  \nnRF54LV10A is designed for applications requiring a low-voltage, 1.2-1.7V power supply and GPIOs. These include direct supply from silver oxide coin-cells. In these applications, the built-in hibernation mode extends the shelf life of devices with an enclosed battery. Additionally, low-voltage GPIO simplifies integration with external devices with voltage-limited IO interfaces.  \n&nbsp;  \nThe datasheet for the SoC and more information can be found on the web pages for the [nRF54LV10A SoC](https://www.nordicsemi.com/Products/nRF54LV10A) and the [nRF54LV10 DK](https://www.nordicsemi.com/Products/Development-hardware/nRF54LV10-DK).',
+        '![nRF54LS05 DK](nRF54LS05DK.png)  \n&nbsp;  \nThe nRF54LS05 DK enables development with nRF54LS05A and nRF54LS05B SoCs.  \n&nbsp;  \nnRF54LS05A and nRF54LS05B are part of the nRF54L Series. All wireless System-on-Chip (SoC) options in the series integrate an ultra-low-power 2.4 GHz radio with MCU (Microcontroller Unit) functionality featuring a 128 MHz Arm® Cortex®-M33 processor.  \n&nbsp;  \n![nRF54LS05 DK Technologies](54LV10Tech.png)  \nThe nRF54LS05A and the larger-RAM nRF54LS05B feature a Bluetooth LE radio and an entry-level peripheral set, making them suitable as a main MCU for sensors, tags, beacons, remotes, and PC peripherals, as well as a Bluetooth companion device in larger systems.  \n&nbsp;  \nnRF54LS05A supports Bluetooth LE and 2.4 GHz proprietary protocols with data rates up to 4 Mbps for low-latency applications.  \n&nbsp;  \nFor the datasheet and more information, see the web pages for the [nRF54L05A SoC](https://www.nordicsemi.com/Products/nRF54LS05A), the [nRF54L05B SoC](https://www.nordicsemi.com/Products/nRF54LS05B), and the [nRF54LS05 DK](https://www.nordicsemi.com/Products/Development-hardware/nRF54LS05-DK).',
 };
 
 const programConfig = [
@@ -33,7 +33,7 @@ const programConfig = [
             firmwareList: [
                 {
                     core: 'Application',
-                    file: 'nrf54lv10dk_hello_world.hex',
+                    file: 'nrf54ls05dk_hello_world.hex',
                     link: {
                         label: 'Hello World',
                         href: 'https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/samples/hello_world/README.html',
@@ -55,7 +55,7 @@ const programConfig = [
             firmwareList: [
                 {
                     core: 'Application',
-                    file: 'nrf54lv10dk_lbs.hex',
+                    file: 'nrf54ls05dk_lbs.hex',
                     link: {
                         label: 'Peripheral LBS',
                         href: 'https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/samples/bluetooth/peripheral_lbs/README.html',
@@ -77,7 +77,7 @@ const programConfig = [
             firmwareList: [
                 {
                     core: 'Application',
-                    file: 'nrf54lv10dk_power_profiling.hex',
+                    file: 'nrf54ls05dk_power_profiling.hex',
                     link: {
                         label: 'Peripheral Power Profiling',
                         href: 'https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/samples/bluetooth/peripheral_power_profiling/README.html',
@@ -99,7 +99,7 @@ const programConfig = [
             firmwareList: [
                 {
                     core: 'Application',
-                    file: 'nrf54lv10dk_peripheral_uart.hex',
+                    file: 'nrf54ls05dk_peripheral_uart.hex',
                     link: {
                         label: 'Peripheral UART Service',
                         href: 'https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/samples/bluetooth/peripheral_uart/README.html',
@@ -115,7 +115,7 @@ const verifyConfig = [
         ref: 'Hello World',
         config: {
             vComIndex: 0,
-            regex: /(\*{3} Booting nRF Connect SDK .* \*{3}\r\n\*{3} Using Zephyr OS .* \*{3}\r\nHello world from nrf54lv10dk.*\r\n)/,
+            regex: /(\*{3} Booting nRF Connect SDK .* \*{3}\r\n\*{3} Using Zephyr OS .* \*{3}\r\nHello World! nrf54ls05dk.*\r\n)/,
         },
     },
     {
@@ -283,7 +283,7 @@ const appsConfig = [
 ];
 
 export default {
-    device: 'nRF54LV10 DK',
+    device: 'nRF54LS05 DK',
     flow: [
         Info(infoConfig),
         Rename(),
